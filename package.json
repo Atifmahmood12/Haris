@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "Static ProGamer Hub site - helper scripts",
   "scripts": {
-    "resolve-channel": "node scripts/resolve_youtube_channel.js --channel=\"https://www.youtube.com/@progamer-sub\" --file=./categories.json"
+    "resolve-channel": "node scripts/resolve_youtube_channel.js --channel=\"https://www.youtube.com/@progamer-sub\" --file=./categories.json",
+    "resolve:channel": "node scripts/resolve_youtube_channel.js"
   },
   "engines": {
     "node": ">=18"
