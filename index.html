@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Multi-site Static Host</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="inner">
+      <h1>My Static Sites</h1>
+      <nav id="site-nav"></nav>
+    </div>
+  </header>
+
+  <main class="inner">
+    <section class="panel">
+      <h2>Available sites</h2>
+      <ul id="sites-list"></ul>
+      <p>Sites are stored under the <code>/sites/&lt;site-name&gt;/</code> folder. The GitHub Actions workflow publishes one site folder to GitHub Pages — see <code>.github/workflows/deploy.yml</code>.</p>
+    </section>
+
+    <section class="panel">
+      <h2>Categories (dynamic)</h2>
+      <div id="categories"></div>
+    </section>
+  </main>
+
+  <!-- YouTube modal -->
+  <div id="yt-modal" class="modal hidden" aria-hidden="true">
+    <div class="modal-content">
+      <button id="modal-close" class="btn-close">✕</button>
+      <div class="video-wrap"><iframe id="yt-iframe" src="" frameborder="0" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe></div>
+    </div>
+  </div>
+
+  <script src="assets/js/site.js"></script>
+</body>
+</html>

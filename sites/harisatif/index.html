@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ProGamer Hub — HarisAtif</title>
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+  <style>
+    header{background:#1f2937;color:#fff;padding:1rem}
+    header a{color:#fff;text-decoration:underline}
+    .grid{display:grid;grid-template-columns:1fr 2fr 1fr;gap:1rem;margin:1rem}
+    .panel{background:#fff;padding:1rem;border-radius:8px}
+    .category-controls{display:flex;gap:0.5rem;align-items:center;margin-bottom:0.5rem}
+    .category-list a{display:block;padding:0.35rem 0;color:#0b63d8;text-decoration:none}
+    .category-list a:hover{text-decoration:underline}
+    .bio-section .btn{margin-right:0.5rem}
+
+    /* Channel banner styles */
+    .channel-banner{display:flex;align-items:center;gap:1rem;padding:0.75rem;border:1px solid #e6e6e6;border-radius:8px;background:#fafafa}
+    .channel-banner .avatar{width:64px;height:64px;border-radius:8px;background:#ddd;flex:0 0 64px;display:flex;align-items:center;justify-content:center;color:#666;position:relative;overflow:hidden}
+    .channel-banner .avatar img{width:100%;height:100%;object-fit:cover;display:block}
+    .channel-banner .avatar .play-overlay{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:36px;height:36px;border-radius:50%;background:rgba(0,0,0,0.6);display:flex;align-items:center;justify-content:center;color:#fff;opacity:0.95}
+    .channel-banner .avatar .play-overlay svg{width:18px;height:18px}
+    .channel-banner .meta{flex:1}
+    .channel-banner .meta h3{margin:0 0 0.25rem 0}
+    .channel-banner .actions{display:flex;gap:0.5rem}
+    .channel-banner .actions .btn{padding:0.35rem 0.6rem}
+
+    /* small responsive tweak */
+    @media(max-width:900px){.grid{grid-template-columns:1fr;}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="inner">
+      <h1>ProGamer Hub — HarisAtif</h1>
+  <p class="small">Back to <a href="../../index.html">sites index</a></p>
+    </div>
+  </header>
+
+  <div class="inner grid">
+    <div class="panel">
+      <h2>Ninja Bot Builder</h2>
+      <div class="bot-display">Selected parts appear here</div>
+    </div>
+
+    <div class="panel">
+      <h2>My ProGamer Page</h2>
+
+      <!-- Category selection: populated from /categories.json -->
+      <div class="category-controls" aria-hidden="false">
+        <label for="category-select">Categories:</label>
+        <select id="category-select" aria-label="Choose category"></select>
+        <button id="reload-categories" class="btn small">Reload</button>
+      </div>
+
+      <div class="bio-section">
+        <p>Write bio, channel description, research, collabs, videos, study notes here...</p>
+        <p>Video example — open embedded player inside this site or open on YouTube:</p>
+        <p>
+          <!-- Direct channel link (opens in new tab) -->
+          <a href="https://www.youtube.com/@progamer-sub" target="_blank" class="btn small" id="open-channel">Open Channel</a>
+          <!-- Example video (plays inside modal) -->
+          <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" data-embed="true" class="btn small" id="example-embed">Play example video inside site</a>
+        </p>
+        <!-- Channel banner (injected by JS) -->
+        <div id="channel-banner-container" style="margin-top:0.75rem"></div>
+        <!-- Place to try embedding a channel/playlist iframe on page load. -->
+        <div id="channel-embed-container" style="margin-top:0.75rem"></div>
+      </div>
+
+      <!-- Dynamic category items will be rendered here -->
+      <div id="categories" class="category-list" aria-live="polite"></div>
+
+    </div>
+
+    <div class="panel">
+      <h2>Selected</h2>
+      <div class="selected-display">Chosen categories or bot pieces displayed here</div>
+    </div>
+  </div>
+
+  <!-- Reuse same modal markup as index; script will handle embed link with data-embed -->
+  <div id="yt-modal" class="modal hidden" aria-hidden="true">
+    <div class="modal-content">
+      <button id="modal-close" class="btn-close">✕</button>
+      <div class="video-wrap"><iframe id="yt-iframe" src="" frameborder="0" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe></div>
+    </div>
+  </div>
+
+  <script src="../../assets/js/site.js"></script>
+  <script>
+    // attach embed handler to local example link
+    document.addEventListener('DOMContentLoaded', ()=>{
+      const a = document.getElementById('example-embed');
+      if(a) a.addEventListener('click', e=>{
+        e.preventDefault();
+        const evt = { currentTarget: a };
+        // reuse function defined in /assets/js/site.js
+        if(typeof openYouTubeEmbed === 'function') openYouTubeEmbed(evt);
+      });
+    });
+  </script>
+</body>
+</html>

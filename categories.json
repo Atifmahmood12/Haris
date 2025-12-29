@@ -1,0 +1,84 @@
+{
+  "sites": [
+    {
+      "name": "harisatif",
+      "path": "sites/harisatif",
+      "title": "ProGamer Hub (HarisAtif)",
+      "description": "Personal/pro-gaming page with videos and notes"
+    }
+  ],
+  "categories": [
+    {
+      "id": "videos",
+      "title": "Videos",
+      "items": [
+        {
+          "title": "Sample YouTube video (embed)",
+          "url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+          "embed": true,
+          "site": "harisatif"
+        },
+        {
+          "title": "ProGamer channel",
+          "url": "https://www.youtube.com/@progamer-sub",
+          "embed": false,
+          "site": "harisatif",
+          "type": "channel",
+          "playlist": "UUjMnCZ55vIzAHoqdprotPbw",
+          "embedUrl": "https://www.youtube.com/embed?listType=playlist&list=UUjMnCZ55vIzAHoqdprotPbw",
+          "avatarUrl": "https://via.placeholder.com/96?text=PG",
+          "autoEmbed": true,
+          "autoAutoplay": true,
+          "description": "ProGamer channel — uploads playlist embedded below"
+        }
+      ]
+    },
+    {
+      "id": "games",
+      "title": "Games",
+      "items": [
+        {
+          "title": "Speedrun Techniques (Article)",
+          "url": "https://example.com/speedrun-techniques",
+          "embed": false,
+          "site": "harisatif"
+        },
+        {
+          "title": "Pro Gamer Playlists",
+          "url": "https://www.youtube.com/playlist?list=PLexample",
+          "embed": false,
+          "site": "harisatif"
+        }
+      ]
+    },
+    {
+      "id": "mnode",
+      "title": "MNode",
+      "items": [
+        {
+          "title": "MNode Intro (Docs)",
+          "url": "https://example.com/mnode-intro",
+          "embed": false,
+          "site": "harisatif"
+        }
+      ]
+    },
+    {
+      "id": "research",
+      "title": "Research",
+      "items": [
+        {
+          "title": "Game AI Notes",
+          "url": "https://example.com/game-ai-notes",
+          "embed": false,
+          "site": "harisatif"
+        }
+      ]
+    },
+    {
+      "id": "projects",
+      "title": "Projects",
+      "items": []
+    }
+  ]
+}

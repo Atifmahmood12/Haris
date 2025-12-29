@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ProGamer Hub</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #eef2f7;
+    }
+    header {
+      background: #1f2937;
+      color: white;
+      padding: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 1.4rem;
+    }
+    .search-bar {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .search-bar input {
+      padding: 0.4rem;
+      border-radius: 4px;
+      border: none;
+    }
+    nav {
+      background: #374151;
+      color: white;
+      display: flex;
+      gap: 1rem;
+      padding: 0.8rem;
+    }
+    nav select {
+      padding: 0.4rem;
+      border-radius: 4px;
+      border: none;
+    }
+    .container {
+      display: grid;
+      grid-template-columns: 1fr 2fr 1fr;
+      gap: 1rem;
+      padding: 1rem;
+    }
+    .panel {
+      background: white;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    }
+    .panel h2 {
+      margin-top: 0;
+    }
+    .bot-display, .bio-section, .selected-display {
+      min-height: 200px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      padding: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>ProGamer Hub</h1>
+  <div class="search-bar">
+    <input type="text" placeholder="Search..." />
+    <button>Go</button>
+  </div>
+</header>
+
+<nav>
+  <label>Categories:
+    <select>
+      <option>Games</option>
+      <option>Mods</option>
+      <option>Research</option>
+      <option>Collabs</option>
+      <option>Study Projects</option>
+    </select>
+  </label>
+
+  <label>Bot Parts:
+    <select>
+      <option>Head</option>
+      <option>Body</option>
+      <option>Arms</option>
+      <option>Legs</option>
+      <option>Weapon</option>
+    </select>
+  </label>
+</nav>
+
+<div class="container">
+  <!-- LEFT: Bot Builder -->
+  <div class="panel">
+    <h2>Ninja Bot Builder</h2>
+    <div class="bot-display">Selected parts appear here</div>
+  </div>
+
+  <!-- MIDDLE: Personal Page/Bio -->
+  <div class="panel">
+    <h2>My ProGamer Page</h2>
+    <div class="bio-section">
+      <p>Write bio, channel description, research, collabs, videos, study notes here...</p>
+    </div>
+  </div>
+
+  <!-- RIGHT: Selected Items -->
+  <div class="panel">
+    <h2>Selected</h2>
+    <div class="selected-display">Chosen categories or bot pieces displayed here</div>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+name: Deploy selected site to GitHub Pages
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+    inputs:
+      site_path:
+        description: 'Path to the site folder to publish (e.g. sites/harisatif)'
+        required: false
+        default: 'sites/harisatif'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Deploy to gh-pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          # Use workflow_dispatch input when provided, otherwise default to sites/harisatif
+          publish_dir: ${{ github.event.inputs.site_path || 'sites/harisatif' }}
+
+# Notes:
+# - By default this workflow publishes 'sites/harisatif'.
+# - To publish a different site folder, run the workflow manually (Actions > Deploy selected site) and set the site_path input.
+# - The action will push to the 'gh-pages' branch. In your repo settings -> Pages set the source to the gh-pages branch.
